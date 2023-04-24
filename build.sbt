@@ -17,8 +17,18 @@ lazy val commons = Seq(
 )
 
 lazy val root = (project in file("."))
-  .aggregate(async)
+  .aggregate(async, actorbintree)
 
 lazy val async = (project in file("week1-async"))
   .enablePlugins(StudentTasks)
   .settings(commons: _*)
+
+lazy val actorbintree = (project in file("week2-actorbintree"))
+  .enablePlugins(StudentTasks)
+  .settings(commons: _*)
+  .settings(
+    libraryDependencies ++= Seq(
+      "com.typesafe.akka" %% "akka-actor" % "2.6.18",
+      "com.typesafe.akka" %% "akka-testkit" % "2.6.18" % Test,
+    )
+  )
