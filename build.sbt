@@ -17,3 +17,8 @@ lazy val commons = Seq(
 )
 
 lazy val root = (project in file("."))
+  .aggregate(async)
+
+lazy val async = (project in file("week1-async"))
+  .enablePlugins(StudentTasks)
+  .settings(commons: _*)
