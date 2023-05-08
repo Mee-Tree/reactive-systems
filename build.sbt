@@ -1,9 +1,9 @@
 name := "reactive-systems"
-scalaVersion := "3.1.0"
+scalaVersion := "3.1.3"
 
 lazy val commons = Seq(
   course := "reactive",
-  scalaVersion := "3.1.0",
+  scalaVersion := "3.1.3",
 
   scalacOptions ++= Seq(
     // "-language:implicitConversions",
